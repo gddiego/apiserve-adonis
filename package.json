@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "node ace build",
-    "start": "ENV_SILENT=true node server.ts",
+    "start": "ENV_SILENT=true node ace serve",
     "lint": "eslint . --ext=.ts"
   },
   "devDependencies": {
