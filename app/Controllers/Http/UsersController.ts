@@ -3,15 +3,14 @@ import User from 'App/Models/User'
 
 export default class UsersController {
 
-  public async login({ request, auth }: HttpContextContract) {
-    const email = request.input('email')
-    const password = request.input('password')
 
-    const token = await auth.use('api').attempt(email, password)
-    return token.toJSON()
+
+  async index() {
+
+    const users = await User.all();
+
+    return users;
   }
-
-
   public async store({ request }) {
 
     const data = request.only(["username", "email", "password"])
@@ -22,7 +21,7 @@ export default class UsersController {
   }
 
 
-  async update({ params, request, response }: HttpContextContract) {
+  async update({ params, request }: HttpContextContract) {
     const user = await User.findOrFail(params.id);
     //dsdsds
 
@@ -34,7 +33,7 @@ export default class UsersController {
     return user
   }
 
-  async show({ params, auth, response }: HttpContextContract) {
+  async show({ params, }: HttpContextContract) {
     const user = await User.findOrFail(params.id)
     // if (!client.user_id) {
     //   return response.status(401).send({ error: 'Não autorizado' })
@@ -42,7 +41,7 @@ export default class UsersController {
     return user
   }
 
-  async destroy({ params, request, response }: HttpContextContract) {
+  async destroy({ params, response }: HttpContextContract) {
     const user = await User.findOrFail(params.id);
     await user.delete();
     return response.status(200).send({ Sucesso: 'Registro deletado com sucesso' })

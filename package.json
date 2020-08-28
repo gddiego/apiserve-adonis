@@ -23,6 +23,7 @@
     "@adonisjs/core": "^5.0.0-preview-rc-1.11",
     "@adonisjs/fold": "^6.4.0",
     "@adonisjs/lucid": "^8.4.1",
+    "localtunnel": "^2.0.0",
     "luxon": "^1.25.0",
     "pg": "^8.3.3",
     "phc-argon2": "^1.0.10",
