@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "ENV_SILENT=true node ace server"
+    "build": "node ace build",
+    "start": "node ace serve --watch",
+    "lint": "eslint . --ext=.ts"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^2.1.5",
