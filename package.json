@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "ENV_SILENT=true node server.js"
+    "start": "ENV_SILENT=true node ace server"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^2.1.5",
