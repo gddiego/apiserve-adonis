@@ -34,7 +34,7 @@ export default class UsersController {
     return user
   }
 
-  async show({ params, auth, response }) {
+  async show({ params, auth, response }: HttpContextContract) {
     const user = await User.findOrFail(params.id)
     // if (!client.user_id) {
     //   return response.status(401).send({ error: 'Não autorizado' })
@@ -42,7 +42,7 @@ export default class UsersController {
     return user
   }
 
-  async destroy({ params, request, response }) {
+  async destroy({ params, request, response }: HttpContextContract) {
     const user = await User.findOrFail(params.id);
     await user.delete();
     return response.status(200).send({ Sucesso: 'Registro deletado com sucesso' })

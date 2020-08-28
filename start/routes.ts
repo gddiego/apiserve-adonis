@@ -24,5 +24,5 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
-Route.post('/users', 'UsersController.store')
+Route.resource('users', 'UsersController').apiOnly()
 Route.post('/login', 'UsersController.login')
