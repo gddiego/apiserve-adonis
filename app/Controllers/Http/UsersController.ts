@@ -24,7 +24,7 @@ export default class UsersController {
 
   async update({ params, request, response }: HttpContextContract) {
     const user = await User.findOrFail(params.id);
-
+    //dsdsds
 
     const data = request.only(["username", "email", "password"]);
 
